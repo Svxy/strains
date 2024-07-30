@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Strain List</title>
+        <meta name="description" content="My list of cannabis strains with detailed effect ratings.">
+        <meta name="keywords" content="cannabis, strains, ratings, effects, marijuana, weed">
+        <meta property="og:title" content="Strain List">
+        <meta property="og:description" content="Discover and rate your favorite cannabis strains.">
+        <meta property="og:image" content="https://strains.tnyavnto.com/img/og-image.png">
+        <meta property="og:url" content="https://strains.tnyavnto.com">
+        <meta property="og:type" content="website">
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:title" content="Strain List">
+        <meta name="twitter:description" content="Discover and rate your favorite cannabis strains.">
+        <meta name="twitter:image" content="https://strains.tnyavnto.com/img/twitter-image.png">
+        <meta name="twitter:url" content="https://strains.tnyavnto.com">
+        <link rel="icon" href="./img/icon.ico" type="image/x-icon">
+        <link rel="icon" href="./img/icon.png" sizes="64x64" type="image/png">
+        <link rel="apple-touch-icon" href="./img/icon-180x180.png" sizes="180x180">
+        <link rel="icon" href="./img/icon-512x512.png" sizes="512x512" type="image/png">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+        <link rel="stylesheet" href="./css/styles.css">
+        <meta name="robots" content="noarchive, nosnippet, noindex">
+    </head>    
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+    <img src="./img/icon.png" alt="Strain List Logo" class="mx-auto d-block mb-4">
+    <h1 class="text-center">Strain List</h1>
+    <p class="text-center mb-4">A comprehensive list of weed strains I've tried.<br><sup>Ratings may update over time.</sup></p>
+  
+    <div class="text-center mb-4">
+        <button class="btn btn-primary mr-2" onclick="filterStrains('all')">Show All</button>
+        <button class="btn btn-success mr-2" onclick="filterStrains('good')">Good Effects</button>
+        <button class="btn btn-danger" onclick="filterStrains('bad')">Bad Effects</button>
+    </div>
+
+    <div id="strainList" class="list-group mt-4"></div>
+</div>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <p>&copy; 2024-2025 SneakyDev. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="./js/script.js"></script>
+</body>
+</html>
