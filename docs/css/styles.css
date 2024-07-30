@@ -1,10 +1,10 @@
 body {
   font-size: 1.5em;
-  background-color: #121212;
+  background-color: #350000;
 }
 
 .list-group-item {
-  background-color: #333;
+  background-color: #4d0000;
   border: none;
   margin-bottom: 1rem;
   padding: 20px;
@@ -30,7 +30,7 @@ body {
   line-height: 30px;
   border-radius: 5px;
   font-size: 1.25rem;
-  color: white;
+  color: rgb(0, 0, 0);
   text-align: center;
 }
 
@@ -39,6 +39,6 @@ body {
 }
 
 footer {
-  background-color: #333;
+  background-color: #350000;
   color: white;
 }

@@ -17,9 +17,9 @@ const strains = [
         name: "Fruit Roll-Up",
         origin: "Seafoam Dispensary",
         effects: {
-            overall: 9,
-            relaxation: 7,
-            Appetite: 3,
+            overall: 8,
+            relaxation: 5,
+            Appetite: 4,
             focus: 5,
             creativity: 6,
             anxiety: 1,
@@ -28,17 +28,17 @@ const strains = [
         }
     },
     {
-        name: "Black Phoenix",
+        name: "Black Phoenix (havent tried)",
         origin: "Seafoam Dispensary",
         effects: {
-            overall: 7,
-            relaxation: 5,
-            Appetite: 5,
-            focus: 6,
-            creativity: 6,
+            overall: 1,
+            relaxation: 1,
+            Appetite: 1,
+            focus: 1,
+            creativity: 1,
             anxiety: 1,
-            depression: 0,
-            sociability: 4
+            depression: 1,
+            sociability: 1
         }
     }
 ];
@@ -77,7 +77,7 @@ function renderEffect(effectName, effectValue) {
     return `
         <div class="mb-2">${effectName}</div>
         <div class="progress mb-2">
-            <div class="progress-bar bg-success" role="progressbar" style="width: ${effectValue * 10}%;" aria-valuenow="${effectValue}" aria-valuemin="0" aria-valuemax="10">
+            <div class="progress-bar bg-${effectValue >= 4 ? 'success' : 'danger'}" role="progressbar" style="width: ${effectValue * 10}%;" aria-valuenow="${effectValue}" aria-valuemin="0" aria-valuemax="10">
                 ${effectValue}/10
             </div>
         </div>
@@ -94,13 +94,9 @@ function renderEffectsDetails(effects) {
 function filterStrains(filterType) {
     let filteredStrains;
     if (filterType === 'good') {
-        filteredStrains = strains.filter(strain => {
-            return Object.values(strain.effects).some(effect => effect >= 7);
-        });
+        filteredStrains = strains.filter(strain => strain.effects.overall > 5);
     } else if (filterType === 'bad') {
-        filteredStrains = strains.filter(strain => {
-            return Object.values(strain.effects).every(effect => effect < 4);
-        });
+        filteredStrains = strains.filter(strain => strain.effects.overall <= 5);
     } else {
         filteredStrains = strains;
     }
