@@ -28,7 +28,7 @@ const strains = [
         }
     },
     {
-        name: "Black Phoenix (havent tried)",
+        name: "Black Phoenix - havent tried",
         origin: "Seafoam Dispensary",
         effects: {
             overall: 1,
