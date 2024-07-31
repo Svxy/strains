@@ -28,17 +28,17 @@ const strains = [
         }
     },
     {
-        name: "Black Phoenix - havent tried",
+        name: "Black Phoenix",
         origin: "Seafoam Dispensary",
         effects: {
-            overall: 1,
-            relaxation: 1,
-            Appetite: 1,
-            focus: 1,
-            creativity: 1,
-            anxiety: 1,
-            depression: 1,
-            sociability: 1
+            overall: 7,
+            relaxation: 4,
+            Appetite: 5,
+            focus: 4,
+            creativity: 5,
+            anxiety: 0,
+            depression: 0,
+            sociability: 4
         }
     }
 ];
