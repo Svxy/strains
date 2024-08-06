@@ -1,5 +1,18 @@
 const strains = [
     {
+        name: "Cocoa Crispies",
+        origin: "Seafoam Dispensary",
+        effects: {
+            overall: 8,
+            relaxation: 7,
+            energy: 5,
+            appetite: 4,
+            focus: 5,
+            creativity: 5,
+            sociability: 5
+        }
+    },
+    {
         name: "Milk Bubbles",
         origin: "Seafoam Dispensary",
         effects: {
