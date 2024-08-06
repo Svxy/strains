@@ -1,16 +1,16 @@
 const strains = [
     {
-        name: "Bruce Banner",
-        origin: "Heaven on Earth",
+        name: "Blueberry Muffins",
+        origin: "Seafoam Dispensary",
         effects: {
-            overall: 10,
-            relaxation: 10,
-            Appetite: 10,
-            focus: 10,
-            creativity: 10,
+            overall: 9,
+            relaxation: 7,
+            Appetite: 3,
+            focus: 5,
+            creativity: 5,
             anxiety: 0,
             depression: 0,
-            sociability: 10
+            sociability: 5
         }
     },
     {
