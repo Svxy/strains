@@ -1,15 +1,27 @@
 const strains = [
     {
+        name: "Milk Bubbles",
+        origin: "Seafoam Dispensary",
+        effects: {
+            overall: 8,
+            relaxation: 6,
+            energy: 6,
+            appetite: 4,
+            focus: 5,
+            creativity: 4,
+            sociability: 4
+        }
+    },
+    {
         name: "Blueberry Muffins",
         origin: "Seafoam Dispensary",
         effects: {
             overall: 9,
             relaxation: 7,
-            Appetite: 3,
+            energy: 6,
+            appetite: 3,
             focus: 5,
             creativity: 5,
-            anxiety: 0,
-            depression: 0,
             sociability: 5
         }
     },
@@ -19,11 +31,10 @@ const strains = [
         effects: {
             overall: 8,
             relaxation: 5,
-            Appetite: 4,
+            energy: 5,
+            appetite: 4,
             focus: 5,
             creativity: 6,
-            anxiety: 1,
-            depression: 0,
             sociability: 5
         }
     },
@@ -33,11 +44,10 @@ const strains = [
         effects: {
             overall: 7,
             relaxation: 4,
-            Appetite: 5,
+            energy: 4,
+            appetite: 5,
             focus: 4,
             creativity: 5,
-            anxiety: 0,
-            depression: 0,
             sociability: 4
         }
     }
