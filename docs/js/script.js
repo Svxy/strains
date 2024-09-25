@@ -1,6 +1,6 @@
 async function fetchStrains() {
     try {
-        const response = await fetch('https://files.tnyavnto.com/files/strains.json');
+        const response = await fetch('https://files.sneaky.sh/files/strains.json');
         if (!response.ok) {
             throw new Error('VPS response bad');
         }
