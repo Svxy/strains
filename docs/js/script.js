@@ -1,47 +1,16 @@
-const strains = [
-    {
-        name: "Bruce Banner",
-        origin: "Heaven on Earth",
-        effects: {
-            overall: 10,
-            relaxation: 10,
-            Appetite: 10,
-            focus: 10,
-            creativity: 10,
-            anxiety: 0,
-            depression: 0,
-            sociability: 10
+async function fetchStrains() {
+    try {
+        const response = await fetch('https://files.tnyavnto.com/files/strains.json');
+        if (!response.ok) {
+            throw new Error('VPS response bad');
         }
-    },
-    {
-        name: "Fruit Roll-Up",
-        origin: "Seafoam Dispensary",
-        effects: {
-            overall: 9,
-            relaxation: 7,
-            Appetite: 3,
-            focus: 5,
-            creativity: 6,
-            anxiety: 1,
-            depression: 0,
-            sociability: 5
-        }
-    },
-    {
-        name: "Black Phoenix",
-        origin: "Seafoam Dispensary",
-        effects: {
-            overall: 7,
-            relaxation: 5,
-            Appetite: 5,
-            focus: 6,
-            creativity: 6,
-            anxiety: 1,
-            depression: 0,
-            sociability: 4
-        }
+        const strains = await response.json();
+        return strains;
+    } catch (error) {
+        console.error('Failed to fetch strains:', error);
+        return [];
     }
-];
+}
 
 function renderStrains(filteredStrains) {
     const strainList = document.getElementById("strainList");
@@ -52,6 +21,7 @@ function renderStrains(filteredStrains) {
         return;
     }
 
+    filteredStrains.sort((a, b) => b.effects.overall - a.effects.overall);
     filteredStrains.forEach(strain => {
         const strainItem = document.createElement("div");
         strainItem.className = "list-group-item";
@@ -77,7 +47,7 @@ function renderEffect(effectName, effectValue) {
     return `
         <div class="mb-2">${effectName}</div>
         <div class="progress mb-2">
-            <div class="progress-bar bg-success" role="progressbar" style="width: ${effectValue * 10}%;" aria-valuenow="${effectValue}" aria-valuemin="0" aria-valuemax="10">
+            <div class="progress-bar bg-${effectValue >= 4 ? 'success' : 'danger'}" role="progressbar" style="width: ${effectValue * 10}%;" aria-valuenow="${effectValue}" aria-valuemin="0" aria-valuemax="10">
                 ${effectValue}/10
             </div>
         </div>
@@ -91,20 +61,17 @@ function renderEffectsDetails(effects) {
     `;
 }
 
-function filterStrains(filterType) {
+async function filterStrains(filterType) {
+    const strains = await fetchStrains();
     let filteredStrains;
     if (filterType === 'good') {
-        filteredStrains = strains.filter(strain => {
-            return Object.values(strain.effects).some(effect => effect >= 7);
-        });
+        filteredStrains = strains.filter(strain => strain.effects.overall > 5);
     } else if (filterType === 'bad') {
-        filteredStrains = strains.filter(strain => {
-            return Object.values(strain.effects).every(effect => effect < 4);
-        });
+        filteredStrains = strains.filter(strain => strain.effects.overall <= 5);
     } else {
         filteredStrains = strains;
     }
     renderStrains(filteredStrains);
 }
 
-renderStrains(strains);
+filterStrains('all');
