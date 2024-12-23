@@ -1,0 +1,44 @@
+body {
+  font-size: 1.5em;
+  background-color: #350000;
+}
+
+.list-group-item {
+  background-color: #4d0000;
+  border: none;
+  margin-bottom: 1rem;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.list-group-item h5 {
+  font-size: 1.75rem;
+}
+
+.list-group-item p {
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.progress {
+  height: 30px;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  line-height: 30px;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  color: rgb(0, 0, 0);
+  text-align: center;
+}
+
+.btn {
+  font-size: 1.25rem;
+}
+
+footer {
+  background-color: #350000;
+  color: white;
+}
